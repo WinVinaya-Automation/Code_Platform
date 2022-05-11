@@ -8,6 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.winvinaya.foundation.web.SendAttachment;
 import org.wv.auto.framework.BaseTest;
 import org.wv.auto.framework.utils.Reporter;
 
@@ -15,12 +16,12 @@ public class WinVinayaFoundationWebBaseTest extends BaseTest {
 	public String browser = "Chrome";
 	@BeforeMethod
 	public void beforeMethod() {
-		print("This is winvinaya acadamy WebSite Load Test beforeMethod");
+		print("This is winvinaya foundation WebSite Load Test beforeMethod");
 	}
 
 	@AfterMethod
 	public void afterMethod() {
-		print("This is winvinaya acadamy WebSite Load Test afterMethod");
+		print("This is winvinaya foundation WebSite Load Test afterMethod");
 		Assert.assertTrue(blnResult);
 	}
 
@@ -33,7 +34,7 @@ public class WinVinayaFoundationWebBaseTest extends BaseTest {
 	public void afterSuite() {
 		Reporter.closeReports();
 		//Added a code for manually sending a report mail
-//		SendAttachment mail =new SendAttachment();
-//		mail.sendmail();
+		SendAttachment mail =new SendAttachment();
+		mail.sendmail();
 	}
 }

@@ -13,14 +13,14 @@ public class SendAttachment{
 		SimpleDateFormat Time =new SimpleDateFormat("HH:mm:ss");
 		Date date = new Date();
 		
-		String mailSubject= "Automation testing || Academy Page || Student side || Page Loading time";
-		String mailBody= "Automation Testing Report \nStudent side page loading time \nJob_Build_Date: "+formatter.format(date)+"\nJob_Build_Time: "+Time.format(date)+"\nPlease find the attachment";
+		String mailSubject= "Automation testing || WinVinaya || Foundation || website";
+		String mailBody= "Automation Testing Report \nTest for foundation website is working or not \nJob_Build_Date: "+formatter.format(date)+"\nJob_Build_Time: "+Time.format(date)+"\nPlease find the attachment";
 		String testReportName= "TestReport "+formatter.format(date)+".csv";
 		
 		// Recipient's email ID needs to be mentioned.
 		String to = "info@winvinayafoundation.org";
 //		String to = "vigneshwaran.r@winvinayafoundation.org";
-		String cc = "vigneshwaran.r@winvinayafoundation.org,ann.jannet@winvinayafoundation.org";
+		String cc = "vigneshwaran.r@winvinayafoundation.org";
 
 		// Sender's email ID needs to be mentioned
 		String from = "winvinayajenkins@gmail.com";
@@ -75,7 +75,7 @@ public class SendAttachment{
 
 			// Part two is attachment
 			messageBodyPart = new MimeBodyPart();
-			String filename = "target/TestReport.csv";//Updated on 8-Apr-22
+			String filename = "target/Report.csv";//Updated on 8-Apr-22
 			DataSource source = new FileDataSource(filename);
 			messageBodyPart.setDataHandler(new DataHandler(source));
 			messageBodyPart.setFileName(testReportName);
