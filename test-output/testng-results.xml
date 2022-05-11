@@ -2,19 +2,23 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="37617" started-at="2022-05-11T10:30:53Z" finished-at="2022-05-11T10:31:31Z">
+  <suite name="Default suite" duration-ms="35887" started-at="2022-05-11T10:56:39Z" finished-at="2022-05-11T10:57:15Z">
     <groups>
       <group name="pilot">
         <method signature="WebTestInfosystemsWeb.AcdemyLoginTest(java.lang.String, java.lang.String)[pri:1, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="AcdemyLoginTest" class="org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb"/>
       </group> <!-- pilot -->
     </groups>
-    <test name="Default test" duration-ms="37617" started-at="2022-05-11T10:30:53Z" finished-at="2022-05-11T10:31:31Z">
+    <test name="Default test" duration-ms="35887" started-at="2022-05-11T10:56:39Z" finished-at="2022-05-11T10:57:15Z">
       <class name="org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="beforeSuite" is-config="true" duration-ms="42" started-at="2022-05-11T10:30:53Z" finished-at="2022-05-11T10:30:53Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="beforeSuite" is-config="true" duration-ms="24" started-at="2022-05-11T10:56:39Z" finished-at="2022-05-11T10:56:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="AcdemyLoginTest(java.lang.String, java.lang.String)[pri:1, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="AcdemyLoginTest" duration-ms="37559" started-at="2022-05-11T10:30:53Z" data-provider="browsers" finished-at="2022-05-11T10:31:31Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2022-05-11T10:56:39Z" finished-at="2022-05-11T10:56:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="AcdemyLoginTest(java.lang.String, java.lang.String)[pri:1, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="AcdemyLoginTest" duration-ms="35845" started-at="2022-05-11T10:56:39Z" data-provider="browsers" finished-at="2022-05-11T10:57:15Z">
           <params>
             <param index="0">
               <value>
@@ -30,15 +34,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AcdemyLoginTest -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2022-05-11T10:30:53Z" finished-at="2022-05-11T10:30:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="afterMethod" is-config="true" duration-ms="805" started-at="2022-05-11T10:31:31Z" finished-at="2022-05-11T10:31:32Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="afterMethod" is-config="true" duration-ms="850" started-at="2022-05-11T10:57:15Z" finished-at="2022-05-11T10:57:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="afterSuite" is-config="true" duration-ms="2" started-at="2022-05-11T10:31:32Z" depends-on-methods="org.winvinaya.infosystems.web.test.WebTestWinVinayaInfosystemsBase.afterMethod" finished-at="2022-05-11T10:31:32Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:org.winvinaya.infosystems.web.testauto.test.testsuites.WebTestInfosystemsWeb@70be0a2b]" name="afterSuite" is-config="true" duration-ms="3827" started-at="2022-05-11T10:57:16Z" depends-on-methods="org.winvinaya.infosystems.web.test.WebTestWinVinayaInfosystemsBase.afterMethod" finished-at="2022-05-11T10:57:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

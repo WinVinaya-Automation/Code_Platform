@@ -8,6 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.winvinaya.infosystems.web.SendAttachment;
 import org.wv.auto.framework.BaseTest;
 import org.wv.auto.framework.utils.Reporter;
 
@@ -33,7 +34,7 @@ public class WinVinayaInfosystemsWebBaseTest extends BaseTest {
 	public void afterSuite() {
 		Reporter.closeReports();
 		//Added a code for manually sending a report mail
-//		SendAttachment mail =new SendAttachment();
-//		mail.sendmail();
+		SendAttachment mail =new SendAttachment();
+		mail.sendmail();
 	}
 }
