@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite configfailurepolicy="continue" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime">
+        <methods>
+          <include name="AcdemyLoginTest" invocation-numbers="0"/>
+          <include name="afterSuite"/>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
