@@ -16,12 +16,12 @@ public class WinVinayaInfosystemsWebBaseTest extends BaseTest {
 	public String browser = "Chrome";
 	@BeforeMethod
 	public void beforeMethod() {
-		print("This is winvinaya acadamy WebSite Load Test beforeMethod");
+		print("This is winvinaya infosystems WebSite Load Test beforeMethod");
 	}
 
 	@AfterMethod
 	public void afterMethod() {
-		print("This is winvinaya acadamy WebSite Load Test afterMethod");
+		print("This is winvinaya infosystems WebSite Load Test afterMethod");
 		Assert.assertTrue(blnResult);
 	}
 
