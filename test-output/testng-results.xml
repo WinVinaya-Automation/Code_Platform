@@ -2,23 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="246765" started-at="2022-03-29T07:52:19Z" finished-at="2022-03-29T07:56:26Z">
+  <suite name="Suite" duration-ms="108188" started-at="2022-05-13T06:44:30Z" finished-at="2022-05-13T06:46:18Z">
     <groups>
       <group name="pilot">
-        <method signature="WebTestUserLoadingTime.AcdemyLoginTest(java.lang.String, java.lang.String)[pri:1, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@29626d54]" name="AcdemyLoginTest" class="org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime"/>
+        <method signature="WebTestUserLoadingTime.AcdemyLoginTest(java.lang.String, java.lang.String)[pri:1, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@41ccb3b9]" name="AcdemyLoginTest" class="org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime"/>
       </group> <!-- pilot -->
     </groups>
-    <test name="Default test" duration-ms="246765" started-at="2022-03-29T07:52:19Z" finished-at="2022-03-29T07:56:26Z">
+    <test name="Test" duration-ms="108188" started-at="2022-05-13T06:44:30Z" finished-at="2022-05-13T06:46:18Z">
       <class name="org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@29626d54]" name="beforeSuite" is-config="true" duration-ms="31" started-at="2022-03-29T07:52:19Z" finished-at="2022-03-29T07:52:19Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@41ccb3b9]" name="beforeSuite" is-config="true" duration-ms="51" started-at="2022-05-13T06:44:30Z" finished-at="2022-05-13T06:44:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@29626d54]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2022-03-29T07:52:19Z" finished-at="2022-03-29T07:52:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="AcdemyLoginTest(java.lang.String, java.lang.String)[pri:1, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@29626d54]" name="AcdemyLoginTest" duration-ms="246733" started-at="2022-03-29T07:52:19Z" data-provider="browsers" finished-at="2022-03-29T07:56:26Z">
+        <test-method status="PASS" signature="AcdemyLoginTest(java.lang.String, java.lang.String)[pri:1, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@41ccb3b9]" name="AcdemyLoginTest" duration-ms="108099" started-at="2022-05-13T06:44:30Z" data-provider="browsers" finished-at="2022-05-13T06:46:18Z">
           <params>
             <param index="0">
               <value>
@@ -34,15 +30,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AcdemyLoginTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@29626d54]" name="afterMethod" is-config="true" duration-ms="705" started-at="2022-03-29T07:56:26Z" finished-at="2022-03-29T07:56:27Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@41ccb3b9]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2022-05-13T06:44:30Z" finished-at="2022-05-13T06:44:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@41ccb3b9]" name="afterMethod" is-config="true" duration-ms="764" started-at="2022-05-13T06:46:18Z" finished-at="2022-05-13T06:46:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@29626d54]" name="afterSuite" is-config="true" duration-ms="1" started-at="2022-03-29T07:56:27Z" depends-on-methods="org.winvinaya.academy.testauto.test.WebTestWinVinayaAcadamyBase.afterMethod" finished-at="2022-03-29T07:56:27Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime@41ccb3b9]" name="afterSuite" is-config="true" duration-ms="4522" started-at="2022-05-13T06:46:19Z" depends-on-methods="org.winvinaya.academy.testauto.test.WebTestWinVinayaAcadamyBase.afterMethod" finished-at="2022-05-13T06:46:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- org.winvinaya.academy.testauto.test.testsuites.WebTestUserLoadingTime -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

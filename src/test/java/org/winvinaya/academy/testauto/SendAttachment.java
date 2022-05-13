@@ -2,26 +2,41 @@ package org.winvinaya.academy.testauto;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
+
+import org.apache.commons.lang3.StringUtils;
+
 import javax.activation.*;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;  
 import java.util.Date;  
 
 public class SendAttachment{
-	public void sendmail(){
+	public static void sendmail() throws IOException {
 		//Take current time & set format
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
 		SimpleDateFormat Time =new SimpleDateFormat("HH:mm:ss");
 		Date date = new Date();
-		
+		PrintReport print= new PrintReport();
+		print.printReport();
 		String mailSubject= "Automation testing || Academy Page || Student side || Page Loading time";
-		String mailBody= "Automation Testing Report \nStudent side page loading time \nJob_Build_Date: "+formatter.format(date)+"\nJob_Build_Time: "+Time.format(date)+"\nPlease find the attachment";
+		String mailBody= "Automation Testing Report \nStudent side page loading time \nJob_Build_Date: "+formatter.format(date)+"\nJob_Build_Time: "+Time.format(date)+"\nPlease find the attachment\nTest Report - Details Below.\n";
+
+		for(String index: PrintReport.values){
+			mailBody = mailBody+index+" ";	
+		}
 		String testReportName= "TestReport "+formatter.format(date)+".csv";
-		
+
+
 		// Recipient's email ID needs to be mentioned.
 		String to = "info@winvinayafoundation.org";
-//		String to = "vigneshwaran.r@winvinayafoundation.org";
 		String cc = "vigneshwaran.r@winvinayafoundation.org,ann.jannet@winvinayafoundation.org";
 
+		//		String to ="vigneshwaran.r@winvinayafoundation.org";
+		//		String cc = "vigneshwaran.r@winvinayafoundation.org";
 		// Sender's email ID needs to be mentioned
 		String from = "winvinayajenkins@gmail.com";
 
@@ -36,7 +51,7 @@ public class SendAttachment{
 		props.put("mail.smtp.host", host);
 		props.put("mail.smtp.port", "25"); 
 
-		// Get the Session object.
+		// Get the Session object. 
 		Session session = Session.getInstance(props,
 				new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
@@ -90,9 +105,9 @@ public class SendAttachment{
 			System.out.println("Mail Sent successfully to "+to+" with CC "+cc);
 
 		} catch (MessagingException e) {
-			
+
 			throw new RuntimeException(e);
-			
+
 		}
 	}
 }
