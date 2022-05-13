@@ -10,7 +10,7 @@ public class Reporter {
 	private static CSVWriter repWriterDetail;
 	private static CSVWriter repWriterFailure;
 	private static String strBrowserAppOS = "Chrome";
-	private static String strEnv = "Winvinaya-infoSystems-web";
+	private static String strEnv = "Winvinaya-infoSystems-webSite";
 
 	public static void createReports() {
 		createReport();
@@ -46,7 +46,7 @@ public class Reporter {
 
 	private static void writeHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME STAMP".split(",");
+		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(In sec),TIME STAMP".split(",");
 		TimeManager.setTimeAtEvent();
 		// Write the record to file
 		if (repWriter != null)
@@ -63,7 +63,7 @@ public class Reporter {
 
 	private static void writeFailureHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME STAMP".split(",");
+		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(In sec),TIME STAMP".split(",");
 		// Write the record to file
 		if (repWriterFailure != null)
 			repWriterFailure.writeNext(record);

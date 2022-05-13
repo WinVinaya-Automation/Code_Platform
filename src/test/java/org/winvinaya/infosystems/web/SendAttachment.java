@@ -2,19 +2,26 @@ package org.winvinaya.infosystems.web;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
+
 import javax.activation.*;
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;  
 import java.util.Date;  
 
 public class SendAttachment{
-	public void sendmail(){
+	public void sendmail() throws IOException{
 		//Take current time & set format
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
 		SimpleDateFormat Time =new SimpleDateFormat("HH:mm:ss");
 		Date date = new Date();
-		
+		PrintReport print= new PrintReport();
+		print.printReport();
 		String mailSubject= "Automation testing || WinVinaya || InfoSystems || Website";
-		String mailBody= "Automation Testing Report \nTest for the infosystems website is working or not \nJob_Build_Date: "+formatter.format(date)+"\nJob_Build_Time: "+Time.format(date)+"\nPlease find the attachment";
+		String mailBody= "Automation Testing Report \nTest for the infosystems website is working or not \nJob_Build_Date: "+formatter.format(date)+"\nJob_Build_Time: "+Time.format(date)+"\nPlease find the attachment\nTest Report - Details Below.\nBrowser: Chrome\nEnvironment: WinVinaya-InfoSystems-Website\n";;
+		for(String index: PrintReport.values){
+			mailBody = mailBody+index+" ";	
+		}
 		String testReportName= "TestReport "+formatter.format(date)+".csv";
 		
 		// Recipient's email ID needs to be mentioned.
