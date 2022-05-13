@@ -17,7 +17,7 @@ public class FoundationWebPage extends WinvinyaFoundationWebBasePage{
 	public By lblManuBlog=By.xpath("//*[@title='Blog']");
 	public By btnReadMore=By.xpath("(//*[text()='Read More'])[1]");
 	public By lblManuDonate=By.xpath("//*[@title='Donate']");
-	public By lblManuContactUs=By.xpath("//*[@title='Contact​ Us']");
+	public By lblManuContactUs=By.xpath("//*[@id=\"top-menu\"]/li[9]/a");
 	public By lblManuUtsav=By.xpath("//*[@id='top-menu']//a[text()='Utsav']");
 
 	public String getCurrentURL() {

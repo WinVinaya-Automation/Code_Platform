@@ -31,7 +31,7 @@ public class WinVinayaFoundationWebBaseTest extends BaseTest {
 	}
 
 	@AfterSuite
-	public void afterSuite() {
+	public void afterSuite() throws IOException {
 		Reporter.closeReports();
 		//Added a code for manually sending a report mail
 		SendAttachment mail =new SendAttachment();

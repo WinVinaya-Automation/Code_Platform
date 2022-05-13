@@ -2,24 +2,32 @@ package org.winvinaya.foundation.web;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
+
+
 import javax.activation.*;
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;  
 import java.util.Date;  
 
 public class SendAttachment{
-	public void sendmail(){
+	public void sendmail() throws IOException{
 		//Take current time & set format
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
 		SimpleDateFormat Time =new SimpleDateFormat("HH:mm:ss");
 		Date date = new Date();
-		
+		PrintReport print= new PrintReport();
+		print.printReport();
 		String mailSubject= "Automation testing || WinVinaya || Foundation || website";
-		String mailBody= "Automation Testing Report \nTest for foundation website is working or not \nJob_Build_Date: "+formatter.format(date)+"\nJob_Build_Time: "+Time.format(date)+"\nPlease find the attachment";
+		String mailBody= "Automation Testing Report \nTest for foundation website is working or not \nJob_Build_Date: "+formatter.format(date)+"\nJob_Build_Time: "+Time.format(date)+"\nPlease find the attachment\nTest Report - Details Below.\nBrowser: Chrome\nEnvironment: WinVinaya-Foundation-Website\n";
+		for(String index: PrintReport.values){
+			mailBody = mailBody+index+" ";	
+		}
 		String testReportName= "TestReport "+formatter.format(date)+".csv";
-		
+
 		// Recipient's email ID needs to be mentioned.
 		String to = "info@winvinayafoundation.org";
-//		String to = "vigneshwaran.r@winvinayafoundation.org";
+		//		String to = "vigneshwaran.r@winvinayafoundation.org";
 		String cc = "vigneshwaran.r@winvinayafoundation.org";
 
 		// Sender's email ID needs to be mentioned
@@ -75,7 +83,7 @@ public class SendAttachment{
 
 			// Part two is attachment
 			messageBodyPart = new MimeBodyPart();
-			String filename = "target/Report.csv";//Updated on 8-Apr-22
+			String filename = "target/TestReport.csv";//Updated on 8-Apr-22
 			DataSource source = new FileDataSource(filename);
 			messageBodyPart.setDataHandler(new DataHandler(source));
 			messageBodyPart.setFileName(testReportName);
@@ -90,9 +98,9 @@ public class SendAttachment{
 			System.out.println("Mail Sent successfully to "+to+" with CC "+cc);
 
 		} catch (MessagingException e) {
-			
+
 			throw new RuntimeException(e);
-			
+
 		}
 	}
 }
