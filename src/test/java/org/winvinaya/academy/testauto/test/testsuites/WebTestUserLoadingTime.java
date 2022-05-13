@@ -60,7 +60,7 @@ public class WebTestUserLoadingTime extends WebTestWinVinayaAcadamyBase {
 		loadTime=new UserLoadingTimeSteps(driver);
 		Reporter.writeSummary(TC+++",Verify the user login loading time, " +  loadTime.getResult());
 		loadTime.checkHomeIsExisted();
-		Reporter.writeSummary(TC+++",Verify the clicking action of home button and the loading time of Home page (View All courses button), " +  loadTime.getResult());
+		Reporter.writeSummary(TC+++",Verify the clicking action of home button and the loading time of Home page, " +  loadTime.getResult());
 		//		searchItem("WinVinaya – Complete MySQL Developer Course in ISL");
 		//		courseLoadingTimeiLearn();
 		//		loadTime.goBack();
