@@ -46,7 +46,7 @@ public class Reporter {
 
 	private static void writeHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(In sec),TIME STAMP".split(",");
+		String[] record = "Browser/App, Environment,TCID, TEST RESULT ,TIME TAKEN(In sec), TEST DESCRIPTION,TIME STAMP".split(",");
 		TimeManager.setTimeAtEvent();
 		// Write the record to file
 		if (repWriter != null)
@@ -63,14 +63,20 @@ public class Reporter {
 
 	private static void writeFailureHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(In sec),TIME STAMP".split(",");
+		String[] record = "Browser/App, Environment, TCID, TEST RESULT ,TIME TAKEN(In sec),TEST DESCRIPTION,TIME STAMP".split(",");
 		// Write the record to file
 		if (repWriterFailure != null)
 			repWriterFailure.writeNext(record);
 	}
 
-	public static void writeSummary(String strLine) {
-		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeManager.getTimeDiffFromPrevEventInSecs()+","+TimeManager.getCurrentDateTime();
+	public static void writeSummary(String result,String Dricption) {
+		String strReportWithBrowserEnvDetails;
+		if(Integer.parseInt(TimeManager.getTimeDiffFromPrevEventInSecs())<10) {
+			 strReportWithBrowserEnvDetails = strBrowserAppOS + "," +strEnv+","+result+ ","+"0"+TimeManager.getTimeDiffFromPrevEventInSecs()+","+Dricption+","+TimeManager.getCurrentDateTime();
+			}
+			else {
+				strReportWithBrowserEnvDetails = strBrowserAppOS + "," +strEnv+","+result+ ","+TimeManager.getTimeDiffFromPrevEventInSecs()+","+Dricption+","+TimeManager.getCurrentDateTime();
+			}
 		TimeManager.setTimeAtEvent();
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");

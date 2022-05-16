@@ -16,14 +16,14 @@ public class WebTestInfosystemsWeb extends WebTestWinVinayaInfosystemsBase {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		InfosystemsWebSteps steps =new InfosystemsWebSteps(driver);
 		steps.openInfosystemURL();
-		Reporter.writeSummary("01,Verify the infosystem Home Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("01,"+steps.getResult(),"Verify the infosystem Home Page is opening or not");
 		steps.checklblManuProduct();
-		Reporter.writeSummary("02,Verify the infosystem product Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("02,"+steps.getResult(),"Verify the infosystem product Page is opening or not");
 		steps.checklblManuBlog();
-		Reporter.writeSummary("03,Verify the infosystem Blog Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("03,"+steps.getResult(),"Verify the infosystem Blog Page is opening or not");
 		steps.checklblManuAboutUs();
-		Reporter.writeSummary("04,Verify the infosystem about us Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("04,"+steps.getResult(),"Verify the infosystem about us Page is opening or not");
 		steps.checklblManuContact();
-		Reporter.writeSummary("05,Verify the infosystem Contact Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("05,"+steps.getResult(),"Verify the infosystem Contact Page is opening or not");
 	}
 }
