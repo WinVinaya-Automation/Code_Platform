@@ -18,10 +18,10 @@ public class WebTestJavaCourse extends WebTestWinVinayaAcadamyBase {
 		//javastep.checkJavaLHSCourse();
 		//		Reporter.writeSummary("TC-001,Verify the Winvinaya - Java Programming in ISL course is working., " +  javastep.getResult() );
 		JavaCourseSteps javastep=new JavaCourseSteps(driver);
-		Reporter.writeSummary("TC-001,Verify the user login loading time, " +  javastep.getResult());
-		javastep.checkHomeIsExisted();
-		Reporter.writeSummary("TC-002,Verify the home button loading time, " +  javastep.getResult());
-		javastep.searchItem();
-		wait(10);
+//		Reporter.writeSummary("TC-001,Verify the user login loading time, " +  javastep.getResult());
+//		javastep.checkHomeIsExisted();
+//		Reporter.writeSummary("TC-002,Verify the home button loading time, " +  javastep.getResult());
+//		javastep.searchItem();
+//		wait(10);
 	}
 }
