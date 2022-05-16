@@ -27,7 +27,7 @@ public class SendAttachment{
 
 		// Recipient's email ID needs to be mentioned.
 		String to = "info@winvinayafoundation.org";
-		//		String to = "vigneshwaran.r@winvinayafoundation.org";
+//				String to = "vigneshwaran.r@winvinayafoundation.org";
 		String cc = "vigneshwaran.r@winvinayafoundation.org";
 
 		// Sender's email ID needs to be mentioned
@@ -83,7 +83,7 @@ public class SendAttachment{
 
 			// Part two is attachment
 			messageBodyPart = new MimeBodyPart();
-			String filename = "target/TestReport.csv";//Updated on 8-Apr-22
+			String filename = "target/Report.csv";//Updated on 8-Apr-22
 			DataSource source = new FileDataSource(filename);
 			messageBodyPart.setDataHandler(new DataHandler(source));
 			messageBodyPart.setFileName(testReportName);

@@ -20,7 +20,7 @@ public class PrintReport  {
 			try  
 			{  
 				//parsing a CSV file into CSVReader class constructor  
-				reader = new CSVReader(new FileReader("target/TestReport.csv"));  
+				reader = new CSVReader(new FileReader("target/Report.csv"));  
 				String [] nextLine;  
 				//reads one line at a time  
 				while ((nextLine = reader.readNext()) != null)  

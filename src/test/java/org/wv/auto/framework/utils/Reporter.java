@@ -14,13 +14,13 @@ public class Reporter {
 
 	public static void createReports() {
 		createReport();
-//		createDetailReport();
+		//		createDetailReport();
 		createFailureReport();
 	}
 
 	public static void createReport() {
 		// This will create the report file call this before start of testing
-		String reportFile = "target/TestReport.csv";
+		String reportFile = "target/Report.csv";
 		if (repWriter == null)
 			repWriter = CSVManager.getCSVWriter(reportFile);
 		writeHeader();
@@ -43,10 +43,9 @@ public class Reporter {
 			repWriterFailure = CSVManager.getCSVWriter(reportFile);
 		writeFailureHeader();
 	}
-
 	private static void writeHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(In sec),TIME STAMP".split(",");
+		String[] record = "Browser/App, Environment,TCID, TEST RESULT ,TIME TAKEN (in secs.), TEST DESCRIPTION,TIME STAMP".split(",");
 		TimeManager.setTimeAtEvent();
 		// Write the record to file
 		if (repWriter != null)
@@ -63,14 +62,20 @@ public class Reporter {
 
 	private static void writeFailureHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(In sec),TIME STAMP".split(",");
+		String[] record = "Browser/App, Environment, TCID, TEST RESULT ,TIME TAKEN (in secs),TEST DESCRIPTION,TIME STAMP".split(",");
 		// Write the record to file
 		if (repWriterFailure != null)
 			repWriterFailure.writeNext(record);
 	}
 
-	public static void writeSummary(String strLine) {
-		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeManager.getTimeDiffFromPrevEventInSecs()+","+TimeManager.getCurrentDateTime();
+	public static void writeSummary(String result,String Dricption) {
+		String strReportWithBrowserEnvDetails;
+		if(Integer.parseInt(TimeManager.getTimeDiffFromPrevEventInSecs())<10) {
+			strReportWithBrowserEnvDetails = strBrowserAppOS + "," +strEnv+","+result+ ","+"0"+TimeManager.getTimeDiffFromPrevEventInSecs()+","+Dricption+","+TimeManager.getCurrentDateTime();
+		}
+		else {
+			strReportWithBrowserEnvDetails = strBrowserAppOS + "," +strEnv+","+result+ ","+TimeManager.getTimeDiffFromPrevEventInSecs()+","+Dricption+","+TimeManager.getCurrentDateTime();
+		}
 		TimeManager.setTimeAtEvent();
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
@@ -104,7 +109,7 @@ public class Reporter {
 	public static void closeReport() {
 		if (repWriter != null)
 			try {
-				
+
 				repWriter.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -113,7 +118,7 @@ public class Reporter {
 	}
 
 	public static void closeReports() {
-				closeReport(repWriter);
+		closeReport(repWriter);
 		closeReport(repWriterDetail);
 		closeReport(repWriterFailure);
 	}

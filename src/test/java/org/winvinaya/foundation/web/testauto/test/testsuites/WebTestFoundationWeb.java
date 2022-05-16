@@ -16,16 +16,16 @@ public class WebTestFoundationWeb extends WebTestWinVinayaFoundationBase {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		FoundationWebSteps steps =new FoundationWebSteps(driver);
 		steps.openURL();
-		Reporter.writeSummary("01,Verify the foundation Home Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("01,"+steps.getResult(),"Verify the foundation Home Page is opening or not");
 		steps.checkCareerPage();
-		Reporter.writeSummary("02,Verify the foundation career Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("02,"+steps.getResult(),"Verify the foundation career Page is opening or not");
 		steps.checklblManuBlog();
-		Reporter.writeSummary("03,Verify the foundation Blog Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("03,"+steps.getResult(),"Verify the foundation Blog Page is opening or not");
 		steps.checklblManuUtsav();
-		Reporter.writeSummary("04,Verify the foundation Utsav Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("04,"+steps.getResult(),"Verify the foundation Utsav Page is opening or not");
 		steps.checklblManuContactUs();
-		Reporter.writeSummary("05,Verify the foundation Contact us Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("05,"+steps.getResult(),"Verify the foundation Contact us Page is opening or not");
 		steps.checklblManuDonate();
-		Reporter.writeSummary("06,Verify the foundation Donate Page is opening or not, " +  steps.getResult());
+		Reporter.writeSummary("06,"+steps.getResult(),"Verify the foundation Donate Page is opening or not");
 	}
 }
