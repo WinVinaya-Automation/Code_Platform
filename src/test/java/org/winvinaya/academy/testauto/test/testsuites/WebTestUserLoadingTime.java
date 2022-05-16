@@ -15,26 +15,43 @@ public class WebTestUserLoadingTime extends WebTestWinVinayaAcadamyBase {
 	public void  searchItem(String courseName) {
 		loadTime.searchItem(courseName);
 		if(TC>3){
-			Reporter.writeSummary(TC++ +",NEXT COURSE - Verify the "+courseName+" loading time, " +  loadTime.getResult());
+			if(TC<10) {
+				Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"NEXT COURSE - Verify the "+courseName+" loading time");
+			}
+			else {
+				Reporter.writeSummary(String.valueOf(TC++)+","+loadTime.getResult(),"NEXT COURSE - Verify the "+courseName+" loading time ");
+			}
 		}
 		else {
-			Reporter.writeSummary(TC++ +",Verify the "+courseName+" loading time, " +  loadTime.getResult());
+			if(TC<10) 
+				Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the "+courseName+" loading time ");
+			else
+				Reporter.writeSummary(String.valueOf(TC++)+","+loadTime.getResult(),"Verify the "+courseName+" loading time ");
 		}
 	}
 	public void ilearn() {
 		loadTime.clickiLearnItem();
 		loadTime.goBack();
-		Reporter.writeSummary(TC+++",Verify the sub topic - iLearning page loading time, " +  loadTime.getResult());
+		if(TC<10)
+			Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic - iLearning page loading time");
+		else
+			Reporter.writeSummary(String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic - iLearning page loading time");
 	}
 	public void iPratices() {
 		loadTime.clickiPreteiceItem();
 		loadTime.goBack();
-		Reporter.writeSummary(TC+++",Verify the sub topic - iPractice page loading time, " +  loadTime.getResult());
+		if(TC<10)
+			Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic - iPractice page loading time");
+		else
+			Reporter.writeSummary(String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic - iPractice page loading time");
 	}
 	public void iAccess() {
 		loadTime.clickiAccessItem();
 		loadTime.goBack();
-		Reporter.writeSummary(TC+++",Verify the sub topic- iAccess page loading time, " +  loadTime.getResult());
+		if(TC<10)
+			Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic - iPractice page loading time");
+		else
+			Reporter.writeSummary(String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic- iAccess page loading time");
 	}
 	public void courseLoadingTimeiLearn() {
 		ilearn();
@@ -58,18 +75,18 @@ public class WebTestUserLoadingTime extends WebTestWinVinayaAcadamyBase {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		UserLogin(driver);
 		loadTime=new UserLoadingTimeSteps(driver);
-		Reporter.writeSummary(TC+++",Verify the user login loading time, " +  loadTime.getResult());
+		Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the user login loading time");
 		loadTime.checkHomeIsExisted();
-		Reporter.writeSummary(TC+++",Verify the clicking action of home button and the loading time of Home page, " +  loadTime.getResult());
+		Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the clicking action of home button and the loading time of Home page");
 		//		searchItem("WinVinaya – Complete MySQL Developer Course in ISL");
 		//		courseLoadingTimeiLearn();
 		//		loadTime.goBack();
 		//		searchItem("Winvinaya Soft Skills - ISL");	
 		//		courseLoadingTimeiLearn();
 		//		loadTime.goBack();
-//		searchItem("WinVinaya – Learn HTML5 and CSS3 Basics - ISL");
-//		courseLoadingTimeiLearn();
-//		loadTime.goBack();
+		//		searchItem("WinVinaya – Learn HTML5 and CSS3 Basics - ISL");
+		//		courseLoadingTimeiLearn();
+		//		loadTime.goBack();
 		searchItem("WinVinaya- Banking ISL");
 		courseLoadingTimeiAccess();
 		loadTime.goBack();

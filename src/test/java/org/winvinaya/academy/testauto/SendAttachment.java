@@ -28,8 +28,8 @@ public class SendAttachment{
 		String to = "info@winvinayafoundation.org";
 		String cc = "vigneshwaran.r@winvinayafoundation.org,ann.jannet@winvinayafoundation.org";
 
-		//				String to ="vigneshwaran.r@winvinayafoundation.org";
-		//				String cc = "vigneshwaran.r@winvinayafoundation.org";
+//						String to ="vigneshwaran.r@winvinayafoundation.org";
+//						String cc = "vigneshwaran.r@winvinayafoundation.org";
 		// Sender's email ID needs to be mentioned
 		String from = "winvinayajenkins@gmail.com";
 
