@@ -13,7 +13,7 @@ public class Reporter {
 	private static CSVWriter repWriterFailure;
 	private static String strBrowserAppOS = "Chrome";
 	private static String strEnv = "Winvinaya-Academy";
-	private static int TCID=1;
+
 	public static void createReports() {
 		createReport();
 		createDetailReport();
@@ -48,7 +48,7 @@ public class Reporter {
 
 	private static void writeHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment,TCID,TEST RESULT,TIME TAKEN(In sec),TEST DESCRIPTION,TIME STAMP".split(",");
+		String[] record = "Browser/App, Environment,TCID,TEST RESULT,TIME TAKEN (in secs.),TEST DESCRIPTION,TIME STAMP".split(",");
 		TimeManager.setTimeAtEvent();
 		// Write the record to file
 		if (repWriter != null)
@@ -65,7 +65,7 @@ public class Reporter {
 
 	private static void writeFailureHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment,TCID,TEST RESULT,TIME TAKEN(In sec),,TEST DESCRIPTION,TIME STAMP".split(",");
+		String[] record = "Browser/App, Environment,TCID,TEST RESULT,TIME TAKEN (in secs.),TEST DESCRIPTION,TIME STAMP".split(",");
 		// Write the record to file
 		if (repWriterFailure != null)
 			repWriterFailure.writeNext(record);
@@ -74,11 +74,11 @@ public class Reporter {
 	public static void writeSummary(String result,String Dricption) {
 		String strReportWithBrowserEnvDetails;
 		if(Integer.parseInt(TimeManager.getTimeDiffFromPrevEventInSecs())<10) {
-		 strReportWithBrowserEnvDetails = strBrowserAppOS + "," +strEnv+","+result+ ","+"0"+TimeManager.getTimeDiffFromPrevEventInSecs()+","+Dricption+","+TimeManager.getCurrentDateTime();
+			strReportWithBrowserEnvDetails = strBrowserAppOS + "," +strEnv+","+result+ ","+"0"+TimeManager.getTimeDiffFromPrevEventInSecs()+","+Dricption+","+TimeManager.getCurrentDateTime();
 		}
 		else {
 			strReportWithBrowserEnvDetails = strBrowserAppOS + "," +strEnv+","+result+ ","+TimeManager.getTimeDiffFromPrevEventInSecs()+","+Dricption+","+TimeManager.getCurrentDateTime();
-			
+
 		}
 		TimeManager.setTimeAtEvent();
 		// This is report test result
@@ -86,7 +86,6 @@ public class Reporter {
 		repWriter.writeNext(record);	
 		if (strReportWithBrowserEnvDetails.contains("FAILED"))
 			writeFailure(strReportWithBrowserEnvDetails);
-		TCID++;
 	}
 
 	public static void writeSummary(String strLine,String TimeTaken,String TimeStamp) {
