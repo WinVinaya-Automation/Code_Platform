@@ -15,7 +15,7 @@ public class FoundationWebPage extends WinvinyaFoundationWebBasePage{
 	public By lblManuCareers=By.xpath("//*[@id='top-menu']//a[text()='Careers']");
 	public By lblJobOpporunities=By.xpath("//span[text()='Job Opportunities']");
 	public By lblManuBlog=By.xpath("//*[@title='Blog']");
-	public By btnReadMore=By.xpath("(//*[text()='Read More'])[1]");
+	public By lblBlog=By.xpath("//strong[text()='Blog']");
 	public By lblManuDonate=By.xpath("//*[@title='Donate']");
 	public By lblManuContactUs=By.xpath("//*[@id=\"top-menu\"]/li[9]/a");
 	public By lblManuUtsav=By.xpath("//*[@id='top-menu']//a[text()='Utsav']");
@@ -42,7 +42,7 @@ public class FoundationWebPage extends WinvinyaFoundationWebBasePage{
 
 	public boolean checklblManuBlog() {
 		click(lblManuBlog);
-		if(elementExist(btnReadMore) && compareStrings(getLabel("blog"),getCurrentURL())) { 
+		if(elementExist(lblBlog) && compareStrings(getLabel("blog"),getCurrentURL())) { 
 			return true;
 		}
 		return false;
