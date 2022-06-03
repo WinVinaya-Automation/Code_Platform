@@ -49,7 +49,7 @@ public class WebTestUserLoadingTime extends WebTestWinVinayaAcadamyBase {
 		loadTime.clickiAccessItem();
 		loadTime.goBack();
 		if(TC<10)
-			Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic - iPractice page loading time");
+			Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic - iAccess page loading time");
 		else
 			Reporter.writeSummary(String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic- iAccess page loading time");
 	}
