@@ -19,6 +19,9 @@ public class FoundationWebPage extends WinvinyaFoundationWebBasePage{
 	public By lblManuDonate=By.xpath("//*[@title='Donate']");
 	public By lblManuContactUs=By.xpath("//*[@id=\"top-menu\"]/li[9]/a");
 	public By lblManuUtsav=By.xpath("//*[@id='top-menu']//a[text()='Utsav']");
+	public By bannerUtsav=By.xpath("//*[@id='post-5167']/div/div/div/div[2]/div/img");
+	public By txtCountUS=By.xpath("//strong[contains(text(),'CONTACT US')]");
+	public By txtoptions=By.xpath("//span[contains(text(),'Option')]");
 
 	public String getCurrentURL() {
 		return driver.getCurrentUrl();
@@ -50,7 +53,7 @@ public class FoundationWebPage extends WinvinyaFoundationWebBasePage{
 
 	public boolean checklblManuUtsav() {
 		click(lblManuUtsav);
-		if(compareStrings(getLabel("ustav"),getCurrentURL())) { 
+		if(compareStrings(getLabel("ustav"),getCurrentURL()) && elementExist(bannerUtsav)) { 
 			return true;
 		}
 		return false;
@@ -58,7 +61,7 @@ public class FoundationWebPage extends WinvinyaFoundationWebBasePage{
 
 	public boolean checklblManuContactUs() {
 		click(lblManuContactUs);
-		if(compareStrings(getLabel("contactus"),getCurrentURL())) { 
+		if(compareStrings(getLabel("contactus"),getCurrentURL()) && elementExist(txtCountUS)) { 
 			return true;
 		}
 		return false;
@@ -66,7 +69,7 @@ public class FoundationWebPage extends WinvinyaFoundationWebBasePage{
 
 	public boolean checklblManuDonate() {
 		click(lblManuDonate);
-		if(compareStrings(getLabel("donate"),getCurrentURL())) { 
+		if(compareStrings(getLabel("donate"),getCurrentURL())&& elementExist(txtoptions)) { 
 			return true;
 		}
 		return false;
