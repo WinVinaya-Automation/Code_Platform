@@ -30,10 +30,10 @@ public class SendAttachment{
 		String cc = "vigneshwaran.r@winvinayafoundation.org";
 
 		// Sender's email ID needs to be mentioned
-		String from = "winvinayajenkins@gmail.com";
+		String from = "vigneshwaran.r@winvinayafoundation.org,";
 
 		final String username = "winvinayajenkins@gmail.com";//change accordingly
-		final String password = "winvinaya@123";//change accordingly
+		final String password = "yesqdwzfsqfqgiji";//change accordingly
 
 		// Assuming you are sending email through relay.jangosmtp.net
 		String host = "smtp.gmail.com";

@@ -20,6 +20,7 @@ public class InfosystemsWebPage extends WinvinyaInfosystemsWebBasePage{
 	public By lblleaderName=By.xpath("//*[text()='Shiva Jayagopal']");
 	public By lblManuContact=By.xpath("//*[@title='Contact']");
 	public By buttonSendMsg=By.xpath("//*[@value='Send Message']");
+	public By aboutUsSpan=By.xpath("//span[text()='About Us']");
 
 	public String getCurrentURL() {
 		return driver.getCurrentUrl();
@@ -51,7 +52,7 @@ public class InfosystemsWebPage extends WinvinyaInfosystemsWebBasePage{
 
 	public boolean checklblManuAboutUs() {
 		click(lblManuAboutUs);
-		if(compareStrings(getLabel("aboutus"),getCurrentURL())) { 
+		if(compareStrings(getLabel("aboutus"),getCurrentURL()) && elementExist(aboutUsSpan)) { 
 			return true;
 		}
 		return false;
