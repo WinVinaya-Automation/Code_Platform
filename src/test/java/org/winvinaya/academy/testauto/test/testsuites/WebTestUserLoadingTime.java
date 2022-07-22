@@ -84,7 +84,9 @@ public class WebTestUserLoadingTime extends WebTestWinVinayaAcadamyBase {
 	public void AcdemyLoginTest(String row, String strBrowserName) throws IOException  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		UserLogin(driver);
-		resultTime();
+		if(Integer.parseInt(TimeManager.getTimeDiffFromPrevEventInSecs())>30) {
+			WinVinayaAcadamyWebSteps.result="FAILED";
+		}
 		loadTime=new UserLoadingTimeSteps(driver);
 		Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the user login loading time");
 		loadTime.checkHomeIsExisted();
