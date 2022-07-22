@@ -90,9 +90,9 @@ public class Reporter {
 		if(result.contains("FAILED")) {
 			Result="FAILED";
 		}
-		else if(result.contains("PASSED")) {
-			Result="PASSED";
-		}
+//		else if(result.contains("PASSED")) {
+//			Result="PASSED";
+//		}
 //		else {
 //			Result=result.replaceAll("[^a-zA-Z0-9]", "");
 //		}
