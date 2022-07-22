@@ -13,7 +13,7 @@ public class Reporter {
 	private static CSVWriter repWriterFailure;
 	private static String strBrowserAppOS = "Chrome";
 	private static String strEnv = "Winvinaya-Academy";
-	public static String Result="";
+	public static String Result="PASSED";
 	public static void createReports() {
 		createReport();
 		createDetailReport();
