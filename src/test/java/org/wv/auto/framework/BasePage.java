@@ -171,7 +171,7 @@ public abstract class  BasePage {
 		actions.moveToElement(element).perform();
 		wait(3);
 	}
-	
+
 	public void moveElementFocusandClick(By elementLoc) {
 		WebElement element=driver.findElement(elementLoc);
 		actions= new Actions(driver);

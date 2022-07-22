@@ -13,7 +13,7 @@ public class Reporter {
 	private static CSVWriter repWriterFailure;
 	private static String strBrowserAppOS = "Chrome";
 	private static String strEnv = "Winvinaya-Academy";
-
+	public static String Result="";
 	public static void createReports() {
 		createReport();
 		createDetailReport();
@@ -73,12 +73,12 @@ public class Reporter {
 
 	public static void writeSummary(String result,String Dricption) {
 		String strReportWithBrowserEnvDetails;
+		
 		if(Integer.parseInt(TimeManager.getTimeDiffFromPrevEventInSecs())<10) {
 			strReportWithBrowserEnvDetails = strBrowserAppOS + "," +strEnv+","+result+ ","+"0"+TimeManager.getTimeDiffFromPrevEventInSecs()+","+Dricption+","+TimeManager.getCurrentDateTime();
 		}
 		else {
 			strReportWithBrowserEnvDetails = strBrowserAppOS + "," +strEnv+","+result+ ","+TimeManager.getTimeDiffFromPrevEventInSecs()+","+Dricption+","+TimeManager.getCurrentDateTime();
-
 		}
 		TimeManager.setTimeAtEvent();
 		// This is report test result
@@ -86,6 +86,17 @@ public class Reporter {
 		repWriter.writeNext(record);	
 		if (strReportWithBrowserEnvDetails.contains("FAILED"))
 			writeFailure(strReportWithBrowserEnvDetails);
+
+		if(result.contains("FAILED")) {
+			Result="FAILED";
+		}
+		else if(result.contains("PASSED")) {
+			Result="PASSED";
+		}
+//		else {
+//			Result=result.replaceAll("[^a-zA-Z0-9]", "");
+//		}
+
 	}
 
 	public static void writeSummary(String strLine,String TimeTaken,String TimeStamp) {

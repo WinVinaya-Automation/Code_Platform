@@ -4,14 +4,21 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 import org.winvinaya.academy.testauto.DataManager;
+import org.winvinaya.academy.testauto.WinVinayaAcadamyWebSteps;
 import org.winvinaya.academy.testauto.steps.UserLoadingTimeSteps;
 import org.winvinaya.academy.testauto.test.WebTestWinVinayaAcadamyBase;
 import org.wv.auto.framework.BrowserFactory;
 import org.wv.auto.framework.utils.Reporter;
+import org.wv.auto.framework.utils.TimeManager;
 
 public class WebTestUserLoadingTime extends WebTestWinVinayaAcadamyBase {
 	public static int TC=1;
 	UserLoadingTimeSteps loadTime;
+	public void resultTime() {
+		if(Integer.parseInt(TimeManager.getTimeDiffFromPrevEventInSecs())>25) {
+			WinVinayaAcadamyWebSteps.result="FAILED";
+		}
+	}
 	public void  searchItem(String courseName) {
 		loadTime.searchItem(courseName);
 		if(TC>3){
@@ -32,6 +39,7 @@ public class WebTestUserLoadingTime extends WebTestWinVinayaAcadamyBase {
 	public void ilearn() {
 		loadTime.clickiLearnItem();
 		loadTime.goBack();
+		resultTime();
 		if(TC<10)
 			Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic - iLearning page loading time");
 		else
@@ -40,6 +48,7 @@ public class WebTestUserLoadingTime extends WebTestWinVinayaAcadamyBase {
 	public void iPratices() {
 		loadTime.clickiPreteiceItem();
 		loadTime.goBack();
+				resultTime();
 		if(TC<10)
 			Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic - iPractice page loading time");
 		else
@@ -48,6 +57,7 @@ public class WebTestUserLoadingTime extends WebTestWinVinayaAcadamyBase {
 	public void iAccess() {
 		loadTime.clickiAccessItem();
 		loadTime.goBack();
+		resultTime();
 		if(TC<10)
 			Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the sub topic - iAccess page loading time");
 		else
@@ -74,6 +84,7 @@ public class WebTestUserLoadingTime extends WebTestWinVinayaAcadamyBase {
 	public void AcdemyLoginTest(String row, String strBrowserName) throws IOException  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		UserLogin(driver);
+		resultTime();
 		loadTime=new UserLoadingTimeSteps(driver);
 		Reporter.writeSummary("0"+String.valueOf(TC++)+","+loadTime.getResult(),"Verify the user login loading time");
 		loadTime.checkHomeIsExisted();

@@ -2,6 +2,9 @@ package org.winvinaya.academy.testauto;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
+
+import org.wv.auto.framework.utils.Reporter;
+
 import javax.activation.*;
 import java.io.IOException;
 import java.text.SimpleDateFormat;  
@@ -15,7 +18,7 @@ public class SendAttachment{
 		Date date = new Date();
 		PrintReport print= new PrintReport();
 		print.printReport();
-		String mailSubject= "Automation testing || Academy Page || Student side || Page Loading time";
+		String mailSubject= "Build -"+Reporter.Result.replaceAll("[0-9]", " ") +" || Winvinaya Academy || Student side || Page Loading time";
 		String mailBody= "Automation Testing Report \nStudent side page loading time \nJob_Build_Date: "+formatter.format(date)+"\nJob_Build_Time: "+Time.format(date)+"\nPlease find the attachment\nTest Report - Details Below.\nBrowser: Chrome\nEnvironment: WinVinaya-Academy-WebApp\n";
 
 		for(String index: PrintReport.values){
@@ -25,12 +28,11 @@ public class SendAttachment{
 
 
 		//		 Recipient's email ID needs to be mentioned.
-		String to = "info@winvinayafoundation.org";
-//		String to = "vigneshwaran.r@winvinayafoundation.org";
-		String cc = "vigneshwaran.r@winvinayafoundation.org,ann.jannet@winvinayafoundation.org";
+				String to = "info@winvinayafoundation.org";
+				String cc = "vigneshwaran.r@winvinayafoundation.org,ann.jannet@winvinayafoundation.org";
 
-//						String to ="vigneshwaran.r@winvinayafoundation.org";
-//						String cc = "vigneshwaran.r@winvinayafoundation.org";
+//		String to ="vigneshwaran.r@winvinayafoundation.org";
+//		String cc = "vigneshwaran.r@winvinayafoundation.org";
 		// Sender's email ID needs to be mentioned
 		String from = "vigneshwaran.r@winvinayafoundation.org,";
 

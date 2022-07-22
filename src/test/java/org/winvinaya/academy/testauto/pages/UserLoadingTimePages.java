@@ -29,12 +29,16 @@ public class UserLoadingTimePages extends WinVinayaAcadamyWebBasePage{
 	 * Changed the mtd to boolean from void on 29-Mar-22
 	 */
 	public boolean searchItem(String courseName) {
+		By courseXpath=By.xpath("//*[@class='course-item-head']//*[@title='"+courseName+"']");
 		if(elementExist(searchTab)) {
 			wait(3);
 			enterData(courseName,searchTab); 
-			driver.findElement(searchTab).sendKeys(Keys.RETURN);
-			//			driver.findElement(searchTab).sendKeys(Keys.RETURN);
-			By courseXpath=By.xpath("//*[@class='course-item-head']//*[contains(text(),'"+courseName+"')]");
+		while(elementExist(searchTab)) {
+			driver.findElement(searchTab).sendKeys(Keys.ENTER);
+			if(isDisplayed(courseXpath)) {
+				break;
+			}
+		}
 			moveElementFocusandClick(courseXpath);
 			return true;
 		}
